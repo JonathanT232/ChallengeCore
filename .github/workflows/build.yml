@@ -30,6 +30,9 @@ jobs:
       - name: Apply 1.0.3 overhaul
         run: python3 patch_v103.py
 
+      - name: Prepare 1.0.3 generated assets
+        run: python3 patch_v103_assets.py
+
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
