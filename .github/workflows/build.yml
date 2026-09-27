@@ -45,15 +45,6 @@ jobs:
           javac GenerateAssets103.java
           java -Djava.awt.headless=true GenerateAssets103
 
-      - name: Fix OGG audio streams
-        shell: bash
-        run: |
-          if ! command -v ffmpeg >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y ffmpeg; fi
-          ffmpeg -y -i src/main/resources/assets/challengecore/sounds/roulette_spin.ogg -vn -c:a libvorbis -q:a 5 /tmp/roulette_spin.ogg
-          mv /tmp/roulette_spin.ogg src/main/resources/assets/challengecore/sounds/roulette_spin.ogg
-          ffmpeg -y -i src/main/resources/assets/challengecore/sounds/boss_breath.ogg -vn -c:a libvorbis -q:a 5 /tmp/boss_breath.ogg
-          mv /tmp/boss_breath.ogg src/main/resources/assets/challengecore/sounds/boss_breath.ogg
-
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
