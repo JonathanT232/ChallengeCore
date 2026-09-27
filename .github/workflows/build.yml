@@ -15,7 +15,7 @@ jobs:
       - name: Rebuild source archive
         shell: bash
         run: |
-          cat source.part00 source.part01 source.partA source.partB source.partC | base64 -d > source.zip
+          cat source.part00 source.part01 source.part02 source.part03 source.part04 source.partB source.partC | base64 -d > source.zip
           unzip -o source.zip
 
       - name: Set up Java 17
