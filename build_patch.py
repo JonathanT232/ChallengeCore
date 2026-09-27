@@ -146,7 +146,7 @@ public final class BossAudioController {
         if(music==null||music.isStopped()){music=new BossLoopSound(ModSounds.BOSS_MUSIC.get(),SoundSource.RECORDS,boss,false,.75f);mc.getSoundManager().play(music);}else music.setBoss(boss);
         if(breath==null||breath.isStopped()){breath=new BossLoopSound(ModSounds.BOSS_BREATH.get(),SoundSource.HOSTILE,boss,true,1f);mc.getSoundManager().play(breath);}else breath.setBoss(boss);
     }
-    public static void stop(){if(music!=null){music.stop();music=null;}if(breath!=null){breath.stop();breath=null;}}
+    public static void stop(){if(music!=null){music.forceStop();music=null;}if(breath!=null){breath.forceStop();breath=null;}}
     private BossAudioController(){}
 }
 """)
